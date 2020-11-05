@@ -1,0 +1,16 @@
+<!--CONTENIDO-->
+<div class="center">
+  <section id="content">
+    <h2 class="subheader">Articulos de la categoria {{this.categorie}}</h2>
+    <a [routerLink]="['/tienda']" class="btn btn-success">Volver a la Tienda</a>
+    <app-articles [articles]="articles">
+    </app-articles>
+
+  </section>
+
+
+
+  <!--LIMPiAR FLOTADOS. EL DOM DE LA WEB TIENDE A PONER CADA ELEMENTO AL LADO DEL ANTERIOR-->
+  <!--CON ESTE CLEAR FIX HACEMOS QUE EL FOOTER NO SE ENGA AL LADO Y SIGA DEBAJO DEL SIDEBAR Y DEL CONTENT-->
+  <div class="clearfix"></div>
+</div>

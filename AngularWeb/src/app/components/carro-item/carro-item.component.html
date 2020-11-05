@@ -1,0 +1,7 @@
+<div class="cart-item">
+  <span>{{cartItem.title}}</span> x <span>{{cartItem.qty}}</span>:
+  <strong>{{cartItem.price| currency:'EUR'}}  </strong>
+  <button (click)="deleteItem($event, cartItem)"> X </button>
+</div>
+
+

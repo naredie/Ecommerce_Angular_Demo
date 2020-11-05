@@ -1,0 +1,54 @@
+<!--loading hasta qeu llegiuen los articulos -->
+<div class="loading" *ngIf="!articles">
+  <!--esto se podria hacer con un loading chulo pero de momento me la pela-->
+  Cargando...
+</div>
+
+<!--loading si no se encuentran articulos -->
+<div class="loading" *ngIf="articles && articles.length ==0">
+  <!--esto se podria hacer con un loading chulo pero de momento me la pela-->
+ No hay articulos para mostrar.
+</div>
+
+
+
+<!--SECCIÓN ARTICULOS-->
+<div id="articles" *ngIf="articles">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let article of articles">
+          <div class="product-grid7">
+            <div class="product-image7">
+              <a [routerLink]="['/tienda/articulo/', article._id]">
+                <img class="pic-1" src="{{url +'get-image/'+article.image}}" alt="{{article.title}}" *ngIf="article.image" />
+                <img class="pic-1" src="assets/images/default.png" alt="{{article.title}}" *ngIf="!article.image" />
+                <!--TODO:IMPLEMENTAR ALGO PARA QUE CADA ARTICULO TENGA VARIAS FOTOS-->
+                <!--<img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo8/images/img-2.jpg" />-->
+              </a>
+              <ul class="social">
+                <li> <a [routerLink]="['/tienda/articulo/', article._id]">Ver</a></li>
+                <li><a [routerLink]="" class="fa fa-shopping-cart" (click)="handlAddToCart(article)"></a></li>
+              </ul>
+              <span class="product-new-label">Nuevo</span>
+            </div>
+            <div class="product-content">
+              <h3 class="title"><a href="#">{{article.title}}</a></h3>
+              <!--TODO:IMPLEMENTAR ALGO PARA QUE CADA ARTICULO TENGA SUS ESTRELLAS-->
+              <ul class="rating">
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+              </ul>
+              <div class="price">
+                {{article.price}}
+                <!--TODO:IMPLEMENTAR ALGO PARA QUE CADA ARTICULO TENGA PRECIO REBAJADO-->
+                <span>20.00€</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

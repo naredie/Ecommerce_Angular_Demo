@@ -1,0 +1,31 @@
+<!--podemos anadir propiedades input en los componentes-->
+
+<!--CONTENIDO-->
+<div class="center">
+  <section id="content">
+    <h2 class="subheader">{{title}}</h2>
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col-lg-8 m-15px-tb">
+          <div class="row">
+            <app-articles [articles]="articles"></app-articles>
+          </div>
+        </div>
+        <div class="col-lg-4 m-15px-tb tienda-aside">
+          <!--TODO: Modificar css del boton para mobile view-->
+          <app-tienda-sidebar></app-tienda-sidebar>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!--LIMPiAR FLOTADOS. EL DOM DE LA WEB TIENDE A PONER CADA ELEMENTO AL LADO DEL ANTERIOR-->
+  <!--CON ESTE CLEAR FIX HACEMOS QUE EL FOOTER NO SE ENGA AL LADO Y SIGA DEBAJO DEL SIDEBAR Y DEL CONTENT-->
+  <div class="clearfix"></div>
+</div>
+
+

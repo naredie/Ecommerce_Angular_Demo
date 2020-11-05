@@ -1,0 +1,121 @@
+ <!--TODO: RECUENCO - implementar para que lea esto de la base de datos-->
+
+  <!-- Author -->
+  <div class="widget widget-author">
+    <div class="widget-title">
+      <h3>Autor</h3>
+    </div>
+    <div class="widget-body">
+      <div class="media align-items-center">
+        <div class="avatar">
+          <img src="https://bootdey.com/img/Content/avatar/avatar6.png" title="" alt="">
+        </div>
+        <div class="media-body">
+          <h6>Soy, <br> Natanael recuenco</h6>
+        </div>
+      </div>
+      <p>Este es mi DEMO de una MEAN APP para un ecommerce </p>
+    </div>
+  </div>
+  <!-- End Author -->
+  <!-- Trending Post -->
+  <div class="widget widget-post">
+    <div class="widget-title">
+      <h3>Buscador</h3>
+    </div>
+    <div class="widget-body">
+      <p>Encuentra el Articulo que buscas</p>
+      <form #searchForm="ngForm" (ngSubmit)="goSearch()">
+        <input type="text" name="search" [(ngModel)]="searchString" />
+        <input type="submit" name="submit" value="Buscar" class="btn btn-search" />
+      </form>
+    </div>
+  </div>
+  <!-- End Trending Post -->
+  <!-- Latest Post -->
+  <!--TODO: RECUENCO - implementar para que lea esto de la base de datos-->
+  <div class="widget widget-latest-post">
+    <div class="widget-title">
+      <h3>Ultimos Post</h3>
+    </div>
+    <div class="widget-body">
+      <div class="latest-post-aside media">
+        <div class="lpa-left media-body">
+          <div class="lpa-title">
+            <h5><a href="#">La ropa urbana esta de moda</a></h5>
+          </div>
+          <div class="lpa-meta">
+            <a class="name" href="#">
+              Amparo la veneno
+            </a>
+            <a class="date" href="#">
+              26 FEB 2020
+            </a>
+          </div>
+        </div>
+        <div class="lpa-right">
+          <a href="#">
+            <img src="https://via.placeholder.com/400x200/E6E6FA/000000" title="" alt="">
+          </a>
+        </div>
+      </div>
+
+      <div class="latest-post-aside media">
+        <div class="lpa-left media-body">
+          <div class="lpa-title">
+            <h5><a href="#">Moda a bajos precios</a></h5>
+          </div>
+          <div class="lpa-meta">
+            <a class="name" href="#">
+              Raquel gomez
+            </a>
+            <a class="date" href="#">
+              26 FEB 2020
+            </a>
+          </div>
+        </div>
+        <div class="lpa-right">
+          <a href="#">
+            <img src="https://via.placeholder.com/400x200/FFA07A/000000" title="" alt="">
+          </a>
+        </div>
+      </div>
+
+      <div class="latest-post-aside media">
+        <div class="lpa-left media-body">
+          <div class="lpa-title">
+            <h5><a href="#">Llena tu armario por menos de lo que cuesta una compra semanal en el super</a></h5>
+          </div>
+          <div class="lpa-meta">
+            <a class="name" href="#">
+              Maria Andreu
+            </a>
+            <a class="date" href="#">
+              26 FEB 2020
+            </a>
+          </div>
+        </div>
+        <div class="lpa-right">
+          <a href="#">
+            <img src="https://via.placeholder.com/400x200/FFF0F5/000000" title="" alt="">
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- End Latest Post -->
+  <!-- widget Tags -->
+  <!--TODO RECUENCO - :leer estas categorias de la base de datos-->
+  <div class="widget widget-tags">
+    <div class="widget-title">
+      <h3>Categorias</h3>
+    </div>
+    <div class="widget-body">
+      <div class="nav tag-cloud" *ngFor="let categorie of categories">
+        <a href="#">{{categorie}}</a>
+      </div>
+    </div>
+  </div>
+  <!-- End widget Tags -->
+

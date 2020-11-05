@@ -1,0 +1,141 @@
+ <!--TODO: RECUENCO - implementar para que lea esto de la base de datos-->
+<!-- Author -->
+<div id="tiendasidebar">
+  <div class="widget widget-author">
+    <div class="widget-title">
+      <h3>Filtrar articulos</h3>
+    </div>
+    <div class="widget-body">
+
+      <!-- Section: Price version  -->
+      <section class="mb-4">
+        <div class="slider-price d-flex align-items-center my-4">
+          <span class="font-weight-normal small text-muted mr-2">$0</span>
+          <form class="multi-range-field w-100 mb-1">
+            <input id="multi" class="multi-range" type="range" />
+          </form>
+          <span class="font-weight-normal small text-muted ml-2">$100</span>
+        </div>
+      </section>
+      <!-- Section: Price version  -->
+      <section class="mb-4">
+        <form>
+          <div class="d-flex align-items-center mt-4 pb-1">
+            <div class="md-form md-outline my-0">
+              <input id="from" type="text" class="form-control mb-0">
+              <label for="form">$ Min</label>
+            </div>
+            <p class="px-2 mb-0 text-muted"> - </p>
+            <div class="md-form md-outline my-0">
+              <input id="to" type="text" class="form-control mb-0">
+              <label for="to">$ Max</label>
+            </div>
+          </div>
+        </form>
+
+      </section>
+    </div>
+  </div>
+  <!-- End Author -->
+  <!-- Trending Post -->
+  <div class="widget widget-post">
+    <div class="widget-title">
+      <h3>Buscador</h3>
+    </div>
+    <div class="widget-body">
+      <p>Encuentra el Articulo que buscas</p>
+      <form #searchForm="ngForm" (ngSubmit)="goSearch()">
+        <input type="text" name="search" [(ngModel)]="searchString" />
+        <input type="submit" name="submit" value="Buscar" class="btn btn-search" />
+      </form>
+    </div>
+  </div>
+  <!-- End Trending Post -->
+  <!--  botton para crear articulo-->
+  <!--TODO: esto solo lo podra hacer un usuario administrador, el resto no lo podra ver-->
+  <div class="widget widget-author">
+    <div class="widget-title">
+      <h3>Crear articulo nuevo</h3>
+    </div>
+    <div class="widget-body">
+      <a [routerLink]="['/tienda/crear/']" class="btn btn-success">Crear Articulo</a>
+    </div>
+  </div>
+  <!-- Latest Post -->
+  <!--TODO: RECUENCO - implementar para que lea esto de la base de datos-->
+  <div class="widget widget-latest-post">
+    <div class="widget-title">
+      <h3>Articulos más vendidos</h3>
+    </div>
+    <div class="widget-body">
+      <div class="latest-post-aside media">
+        <div class="lpa-left media-body">
+          <div class="lpa-title">
+            <h5><a href="#">Blusa Blanca Mujer</a></h5>
+          </div>
+          <div class="lpa-meta">
+            <a class="date" href="#">
+              10,90€
+            </a>
+          </div>
+        </div>
+        <div class="lpa-right">
+          <a href="#">
+            <img src="https://via.placeholder.com/400x200/E6E6FA/000000" title="" alt="">
+          </a>
+        </div>
+      </div>
+
+      <div class="latest-post-aside media">
+        <div class="lpa-left media-body">
+          <div class="lpa-title">
+            <h5><a href="#">Blusa Blanca Mujer</a></h5>
+          </div>
+          <div class="lpa-meta">
+            <a class="date" href="#">
+              10,90€
+            </a>
+          </div>
+        </div>
+        <div class="lpa-right">
+          <a href="#">
+            <img src="https://via.placeholder.com/400x200/FFA07A/000000" title="" alt="">
+          </a>
+        </div>
+      </div>
+
+      <div class="latest-post-aside media">
+        <div class="lpa-left media-body">
+          <div class="lpa-title">
+            <h5><a href="#">>Blusa Blanca Mujer</a></h5>
+          </div>
+          <div class="lpa-meta">
+            <a class="date" href="#">
+              10,90€
+            </a>
+          </div>
+        </div>
+        <div class="lpa-right">
+          <a href="#">
+            <img src="https://via.placeholder.com/400x200/FFF0F5/000000" title="" alt="">
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- End Latest Post -->
+  <!-- widget Tags -->
+  <!--TODO RECUENCO - :leer estas categorias de la base de datos-->
+  <div class="widget widget-tags">
+    <div class="widget-title">
+      <h3>Categorias</h3>
+    </div>
+    <div class="widget-body">
+      <div class="nav tag-cloud" *ngFor="let categorie of categories">
+        <a href="#">{{categorie}}</a>
+      </div>
+    </div>
+  </div>
+  <!-- End widget Tags -->
+</div>

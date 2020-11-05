@@ -1,0 +1,78 @@
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <a class="navbar-brand" href="#"><img src="../assets/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav6"
+            aria-controls="basicExampleNav6" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="basicExampleNav6">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a [routerLink]="['/index']" [routerLinkActive]="['active']" class="nav-link">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/tienda']" [routerLinkActive]="['active']" class="nav-link">Tienda</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/blog']" [routerLinkActive]="['active']" class="nav-link">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/team']" [routerLinkActive]="['active']" class="nav-link">Sobre nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/contacto']" [routerLinkActive]="['active']" class="nav-link">Contacto</a>
+        </li>
+
+      </ul>
+
+      <!-- Right -->
+      <ul class="navbar-nav nav-flex-icons ml-auto">
+        <form class="navbar-search pl-0 ml-auto" (ngSubmit)="goSearch()">
+          <div class="input-group mb-0">
+            <div class="input-group-prepend">
+              <a (click)="goSearch()" class="input-icon d-flex align-items-center" type="button">
+                <i class="fa fa-search"></i>
+              </a>
+              <input class="form-control white-text rgba-black-light border-0 z-depth-0 pl-5" type="text"
+                     placeholder="Buscar..." aria-label="Search" name="search" [(ngModel)]="searchString">
+            </div>
+          </div>
+        </form>
+        <li class="nav-item dropdown notifications-nav pr-md-3">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink151" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="true" >
+            <span class="badge badge-pill bg-danger" >{{totalproducts}}</span>
+            <span><i class="fa fa-shopping-cart"></i></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink151">
+            <!--<div class="alert alert-info" *ngIf="cartItems.length == 0">El carrito esta vacio</div>
+  <ul class="list-group" *ngIf="cartItems.length > 0">
+    <div class="list-group-item" *ngFor="let carroitem of cartItems">
+      <app-carro-item [cartItem]="carroitem" (DeleteProductCart)="prepareDeleteProduct($event)" ></app-carro-item>
+    </div>
+    <div class="list-group-item active">
+      <strong>Total: </strong>{{cartTotal | currency:'EUR'}}
+    </div>
+  </ul>-->
+
+            <app-carro></app-carro>
+          </div>
+        </li>
+      
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false" [routerLink]="['/login']">
+            <i class="fa fa-fw fa-user"></i>
+          </a>
+          <!--<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink-333">
+            <a [routerLink]="['/login']" [routerLinkActive]="['active']" class="btn btn-light">Login</a>
+          </div>-->
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
